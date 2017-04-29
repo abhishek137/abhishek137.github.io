@@ -34,7 +34,8 @@
     
     
 
-</head>
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
     <div id="container">
@@ -149,16 +150,16 @@
         
             
             <p>I tried the new <a href="https://www.docker.com/products/docker-toolbox" target="_blank" rel="external">Docket Toolbox</a> for windows. However, the <code>Docker Start Terminal</code> never seemed to work for me. I keep on getting below error, nothing seems to resolve it.</p>
-<pre><code class="shell">Looks like something went wrong in step &#39;Checking if machine default exists&#39;...
+<pre class="line-numbers language-shell"><code class="language-shell">Looks like something went wrong in step 'Checking if machine default exists'...
 Press any key to continue...
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>From the message it looked it something went wrong with the virtual machine, so I decide to invesgigate myself.</p>
 <p>I executed below command in a <code>cmd</code> to list down the virtual machines available.</p>
-<pre><code class="shell">&gt; docker-machine ls
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine <span class="token function">ls</span>
 
 NAME         ACTIVE   DRIVER       STATE     URL   SWARM   DOCKER    ERRORS
 my-default   -        virtualbox   Stopped                 Unknown
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>For some reason, the default VM had not started. I started it manually by executing</p>
 <pre><code>&gt; docker-machine start my-default
 Starting &quot;my-default&quot;...
@@ -199,7 +200,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 </div>
 
-    <a data-url="http://computerholic.logicize.co/How-to-make-docker-work-in-Windows/" data-id="cj23f4dk40001ix2pgfip1jya" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://computerholic.logicize.co/How-to-make-docker-work-in-Windows/" data-id="cj23hvqdu0001dx2p3tlroaup" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -330,7 +331,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 </div>
 
-    <a data-url="http://computerholic.logicize.co/How-configure-Putty-for-passwordless-SSH/" data-id="cj23f4djz0000ix2peyb86h5e" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://computerholic.logicize.co/How-configure-Putty-for-passwordless-SSH/" data-id="cj23hvqdn0000dx2pqu7caec1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
