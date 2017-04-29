@@ -3,14 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Computerholic</title>
+    <title>Solution to HackerRank Problem - Nikita and the Game | Computerholic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Computerholic">
-<meta property="og:url" content="http://computerholic.logicize.co/index.html">
+    <meta name="description" content="/* Solution to HackerRank Problem: Nikita and the Game  * URL: https://www.hackerrank.com/challenges/array-splitting  */  import java.io.*; import java.util.*; import java.text.*; import java.math.*;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solution to HackerRank Problem - Nikita and the Game">
+<meta property="og:url" content="http://computerholic.logicize.co/SHR-array-splitting/index.html">
 <meta property="og:site_name" content="Computerholic">
+<meta property="og:description" content="/* Solution to HackerRank Problem: Nikita and the Game  * URL: https://www.hackerrank.com/challenges/array-splitting  */  import java.io.*; import java.util.*; import java.text.*; import java.math.*;">
+<meta property="og:updated_time" content="2017-04-29T17:02:04.310Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Computerholic">
+<meta name="twitter:title" content="Solution to HackerRank Problem - Nikita and the Game">
+<meta name="twitter:description" content="/* Solution to HackerRank Problem: Nikita and the Game  * URL: https://www.hackerrank.com/challenges/array-splitting  */  import java.io.*; import java.util.*; import java.text.*; import java.math.*;">
     
 
     
@@ -114,8 +118,7 @@
 
         <div class="outer">
             
-            <section id="main">
-    <article id="post-SHR-array-splitting" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-SHR-array-splitting" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -123,8 +126,8 @@
             <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/SHR-array-splitting/">Solution to HackerRank Problem - Nikita and the Game</a>
+        <h1 class="article-title" itemprop="name">
+            Solution to HackerRank Problem - Nikita and the Game
         </h1>
     
 
@@ -303,304 +306,26 @@
         </footer>
     </div>
     
-</article>
-
-
-
-    <article id="post-How-to-make-docker-work-in-Windows" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
         
-        
-        
-            <header class="article-header">
-                
+<nav id="article-nav">
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/How-to-make-docker-work-in-Windows/">How to make docker work in Windows</a>
-        </h1>
     
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/How-to-make-docker-work-in-Windows/">
-            <time datetime="2016-08-06T01:57:39.000Z" itemprop="datePublished">2016-08-06</time>
+        <a href="/How-to-make-docker-work-in-Windows/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">How to make docker work in Windows</div>
         </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>I tried the new <a href="https://www.docker.com/products/docker-toolbox" target="_blank" rel="external">Docket Toolbox</a> for windows. However, the <code>Docker Start Terminal</code> never seemed to work for me. I keep on getting below error, nothing seems to resolve it.</p>
-<pre class=" language-bash"><code class="language-bash">Looks like something went wrong <span class="token keyword">in</span> step <span class="token string">'Checking if machine default exists'</span><span class="token punctuation">..</span>.
-Press any key to continue<span class="token punctuation">..</span>.
-</code></pre>
-<p>From the message it looked it something went wrong with the virtual machine, so I decide to invesgigate myself.</p>
-<p>I executed below command in a <code>cmd</code> to list down the virtual machines available.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine <span class="token function">ls</span>
-
-NAME         ACTIVE   DRIVER       STATE     URL   SWARM   DOCKER    ERRORS
-my-default   -        virtualbox   Stopped                 Unknown
-</code></pre>
-<p>For some reason, the default VM had not started. I started it manually by executing</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine start my-default
-Starting <span class="token string">"my-default"</span><span class="token punctuation">..</span>.
-<span class="token punctuation">(</span>my-default<span class="token punctuation">)</span> Check network to re-create <span class="token keyword">if</span> needed<span class="token punctuation">..</span>.
-<span class="token punctuation">(</span>my-default<span class="token punctuation">)</span> Waiting <span class="token keyword">for</span> an IP<span class="token punctuation">..</span>.
-Machine <span class="token string">"my-default"</span> was started.
-Waiting <span class="token keyword">for</span> SSH to be available<span class="token punctuation">..</span>.
-Detecting the provisioner<span class="token punctuation">..</span>.
-Started machines may have new IP addresses. You may need to re-run the <span class="token variable"><span class="token variable">`</span>docker-machine <span class="token function">env</span><span class="token variable">`</span></span> command.
-</code></pre>
-<p><code>Waiting for an IP...</code> took a while</p>
-<p>Running <code>docker ps</code> or any docker command gave below error</p>
-<pre class=" language-bash"><code class="language-bash">An error occurred trying to connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v
-1.23/containers/json: <span class="token function">open</span> //./pipe/docker_engine: The system cannot <span class="token function">find</span> the <span class="token keyword">fi</span>
-le specified.
-</code></pre>
-<p>To fix this, I had to set appropriate environment variables by executing</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine <span class="token function">env</span> my-default
-
-SET DOCKER_TLS_VERIFY<span class="token operator">=</span>1
-SET DOCKER_HOST<span class="token operator">=</span>tcp://192.168.99.100:2376
-SET DOCKER_CERT_PATH<span class="token operator">=</span>C:\Users\abhishek_majhi\.docker\machine\machines\my-default
-
-SET DOCKER_MACHINE_NAME<span class="token operator">=</span>my-default
-REM Run this <span class="token function">command</span> to configure your shell:
-REM     @FOR /f <span class="token string">"tokens=*"</span> %i IN <span class="token punctuation">(</span><span class="token string">'docker-machine env my-default'</span><span class="token punctuation">)</span> DO @%i
-</code></pre>
-<p>Then execute the command suggested in the output.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> @FOR /f <span class="token string">"tokens=*"</span> %i IN <span class="token punctuation">(</span><span class="token string">'docker-machine env my-default'</span><span class="token punctuation">)</span> DO @%i
-</code></pre>
-<p>Now run <code>docker ps</code> or any docker command. It should work now.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker <span class="token function">ps</span>
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-</code></pre>
-<p>That’s All Folks!</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://computerholic.logicize.co/How-to-make-docker-work-in-Windows/" data-id="cj23il6sm0001j82px6mhg7dt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
+</nav>
 
-        </footer>
-    </div>
+
     
 </article>
 
 
-
-    <article id="post-How-configure-Putty-for-passwordless-SSH" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/How-configure-Putty-for-passwordless-SSH/">How configure Putty for passwordless SSH</a>
-        </h1>
+    <section id="comments">
     
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/How-configure-Putty-for-passwordless-SSH/">
-            <time datetime="2016-08-05T23:34:54.000Z" itemprop="datePublished">2016-08-06</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Maintaining multiple servers at work has been a real pain in the ass for me these days. Although I have listed all those servers in putty, I have to remember username-password pairs for each server, or atleast copy it from my secret secure notes when I have to login.</p>
-<p>Then I came up with a grand plan for using RSA keys for these logins instead. This made the login process a click of a button in putty.</p>
-<h3 id="Generate-a-key-pair-with-Putty-Key-Generator"><a href="#Generate-a-key-pair-with-Putty-Key-Generator" class="headerlink" title="Generate a key pair with Putty Key Generator"></a>Generate a key pair with Putty Key Generator</h3><ul>
-<li>Open up <code>puttygen</code> to generate a keypair</li>
-<li>Generate a <strong>SSH-2 RSA</strong> keypair</li>
-<li>Save public key as <code>.pub</code> and private key as <code>.ppk</code></li>
-</ul>
-<h3 id="Add-public-key-as-an-authorized-key-in-the-server"><a href="#Add-public-key-as-an-authorized-key-in-the-server" class="headerlink" title="Add public key as an authorized key in the server"></a>Add public key as an authorized key in the server</h3><ul>
-<li>Login onto your server using putty</li>
-<li>Navigate to <code>.ssh</code> folder of current user         <pre><code>cd ~/.ssh
-</code></pre></li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://computerholic.logicize.co/How-configure-Putty-for-passwordless-SSH/" data-id="cj23il6se0000j82p3xidvf0u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
+    </section>
 
 </section>
             
