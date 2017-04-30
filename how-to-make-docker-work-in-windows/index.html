@@ -6,12 +6,13 @@
     <title>How to make docker work in Windows | Computerholic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="I tried the new Docket Toolbox for windows. However, the Docker Start Terminal never seemed to work for me. I keep on getting below error, nothing seems to resolve it. Looks like something went wrong">
+<meta name="keywords" content="docker,docker toolbox,windows,fix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to make docker work in Windows">
 <meta property="og:url" content="http://computerholic.logicize.co/how-to-make-docker-work-in-windows/index.html">
 <meta property="og:site_name" content="Computerholic">
 <meta property="og:description" content="I tried the new Docket Toolbox for windows. However, the Docker Start Terminal never seemed to work for me. I keep on getting below error, nothing seems to resolve it. Looks like something went wrong">
-<meta property="og:updated_time" content="2017-04-29T16:43:11.871Z">
+<meta property="og:updated_time" content="2017-04-30T12:35:45.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to make docker work in Windows">
 <meta name="twitter:description" content="I tried the new Docket Toolbox for windows. However, the Docker Start Terminal never seemed to work for me. I keep on getting below error, nothing seems to resolve it. Looks like something went wrong">
@@ -144,6 +145,11 @@
 
                         
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/docker/">docker</a>, <a class="tag-link" href="/tags/docker-toolbox/">docker toolbox</a>, <a class="tag-link" href="/tags/fix/">fix</a>, <a class="tag-link" href="/tags/windows/">windows</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -155,14 +161,14 @@
 <pre class=" language-bash"><code class="language-bash">Looks like something went wrong <span class="token keyword">in</span> step <span class="token string">'Checking if machine default exists'</span><span class="token punctuation">..</span>.
 Press any key to continue<span class="token punctuation">..</span>.
 </code></pre>
-<p>From the message it looked it something went wrong with the virtual machine, so I decide to invesgigate myself.</p>
-<p>I executed below command in a <code>cmd</code> to list down the virtual machines available.</p>
+<p>From the message it looked it something went wrong with the virtual machine, so I decidedto investigate myself.</p>
+<p>I executed below command in a <code>cmd</code> to list down the virtual machines available.  </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine <span class="token function">ls</span>
 
 NAME         ACTIVE   DRIVER       STATE     URL   SWARM   DOCKER    ERRORS
 my-default   -        virtualbox   Stopped                 Unknown
 </code></pre>
-<p>For some reason, the default VM had not started. I started it manually by executing</p>
+<p>For some reason, the default VM had not started. I started it manually by executing  </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine start my-default
 Starting <span class="token string">"my-default"</span><span class="token punctuation">..</span>.
 <span class="token punctuation">(</span>my-default<span class="token punctuation">)</span> Check network to re-create <span class="token keyword">if</span> needed<span class="token punctuation">..</span>.
@@ -173,7 +179,7 @@ Detecting the provisioner<span class="token punctuation">..</span>.
 Started machines may have new IP addresses. You may need to re-run the <span class="token variable"><span class="token variable">`</span>docker-machine <span class="token function">env</span><span class="token variable">`</span></span> command.
 </code></pre>
 <p><code>Waiting for an IP...</code> took a while</p>
-<p>Running <code>docker ps</code> or any docker command gave below error</p>
+<p>Running <code>docker ps</code> or any docker command gave below error  </p>
 <pre class=" language-bash"><code class="language-bash">An error occurred trying to connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v
 1.23/containers/json: <span class="token function">open</span> //./pipe/docker_engine: The system cannot <span class="token function">find</span> the <span class="token keyword">fi</span>
 le specified.
@@ -189,7 +195,7 @@ SET DOCKER_MACHINE_NAME<span class="token operator">=</span>my-default
 REM Run this <span class="token function">command</span> to configure your shell:
 REM     @FOR /f <span class="token string">"tokens=*"</span> %i IN <span class="token punctuation">(</span><span class="token string">'docker-machine env my-default'</span><span class="token punctuation">)</span> DO @%i
 </code></pre>
-<p>Then execute the command suggested in the output.</p>
+<p>Then executed the command suggested in the output.</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> @FOR /f <span class="token string">"tokens=*"</span> %i IN <span class="token punctuation">(</span><span class="token string">'docker-machine env my-default'</span><span class="token punctuation">)</span> DO @%i
 </code></pre>
 <p>Now run <code>docker ps</code> or any docker command. It should work now.</p>
@@ -207,7 +213,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 </div>
 
-    <a data-url="http://computerholic.logicize.co/how-to-make-docker-work-in-windows/" data-id="cj23iu9y00001mb2pt2lwyh0l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://computerholic.logicize.co/how-to-make-docker-work-in-windows/" data-id="cj24nfo0i0001pr2pj2mv2uea" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -282,7 +288,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
         
 <nav id="article-nav">
     
-        <a href="/shr-array-splitting/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/hackerrank/solution/array-splitting/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
@@ -291,11 +297,6 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
             </div>
         </a>
     
-    
-        <a href="/how-configure-putty-for-passwordless-ssh/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">How configure Putty for passwordless SSH</div>
-        </a>
     
 </nav>
 
@@ -314,8 +315,22 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
                 <aside id="sidebar">
    
         
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hackerrank/">hackerrank</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hackerrank/solution/">solution</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
     
         
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-toolbox/">docker toolbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fix/">fix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hackerrank/">hackerrank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solution/">solution</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
     
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>

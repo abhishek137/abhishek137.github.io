@@ -115,7 +115,7 @@
         <div class="outer">
             
             <section id="main">
-    <article id="post-shr-array-splitting" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hackerrank/solution/crush" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -124,7 +124,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/shr-array-splitting/">Solution to HackerRank Problem - Nikita and the Game</a>
+            <a class="article-title" href="/hackerrank/solution/crush/">Solution to HackerRank Problem - Algorithmic Crush</a>
         </h1>
     
 
@@ -133,14 +133,241 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/shr-array-splitting/">
+        <a href="/hackerrank/solution/crush/">
+            <time datetime="2017-04-30T06:30:09.000Z" itemprop="datePublished">2017-04-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/hackerrank/">hackerrank</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/hackerrank/solution/">solution</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/hackerrank/">hackerrank</a>, <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/solution/">solution</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="Solution-Greedy-Approach"><a href="#Solution-Greedy-Approach" class="headerlink" title="Solution: Greedy Approach"></a>Solution: Greedy Approach</h2><p>Test cases #7-13 timed out with this solution.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">int</span> N <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> M <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">long</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> m <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> m<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> a <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> b <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> k <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// update each element between a and b</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>a<span class="token operator">&lt;=</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                arr<span class="token punctuation">[</span>a<span class="token punctuation">]</span> <span class="token operator">+=</span> k<span class="token punctuation">;</span>                 
+                a<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">long</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// find the element with maximum value</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> max<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                max <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="Solution-Relative-Difference"><a href="#Solution-Relative-Difference" class="headerlink" title="Solution: Relative Difference"></a>Solution: Relative Difference</h2><p>Instead of storing the actual value of each element in the array, this solution stores the different between current element and previous element.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/* Solution to HackerRank Problem: Algorithmic Crush
+ * URL: https://www.hackerrank.com/challenges/crush
+ */</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">int</span> N <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> M <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// need an extra elemtent in array to deal with updating element at index b</span>
+        <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">long</span><span class="token punctuation">[</span>N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> m <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> m<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> a <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> b <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> k <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// update element at index a. Difference between further element till index b will be same as k is added to all these elements</span>
+            arr<span class="token punctuation">[</span>a<span class="token punctuation">]</span> <span class="token operator">+=</span> k<span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// update element at index b+1 as difference between element at index b and b+1 has changed after adding k to element at index b</span>
+            arr<span class="token punctuation">[</span>b<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-=</span> k<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">long</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// find the element with maximum value by summing up the difference</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            sum <span class="token operator">+=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>sum <span class="token operator">></span> max<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                max <span class="token operator">=</span> sum<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://computerholic.logicize.co/hackerrank/solution/crush/" data-id="cj24nfo4n0004pr2p0th8ln7b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-hackerrank/solution/array-splitting" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/hackerrank/solution/array-splitting/">Solution to HackerRank Problem - Nikita and the Game</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/hackerrank/solution/array-splitting/">
             <time datetime="2017-04-29T11:28:54.000Z" itemprop="datePublished">2017-04-29</time>
         </a>
     </div>
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/hackerrank/">hackerrank</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/hackerrank/solution/">solution</a>
+    </div>
+
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/hackerrank/">hackerrank</a>, <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/solution/">solution</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -231,7 +458,7 @@
 
 </div>
 
-    <a data-url="http://computerholic.logicize.co/shr-array-splitting/" data-id="cj23iu9y50002mb2p6nntgrk5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://computerholic.logicize.co/hackerrank/solution/array-splitting/" data-id="cj24nfo480002pr2pk69qg74z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -333,6 +560,11 @@
 
                         
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/docker/">docker</a>, <a class="tag-link" href="/tags/docker-toolbox/">docker toolbox</a>, <a class="tag-link" href="/tags/fix/">fix</a>, <a class="tag-link" href="/tags/windows/">windows</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -344,14 +576,14 @@
 <pre class=" language-bash"><code class="language-bash">Looks like something went wrong <span class="token keyword">in</span> step <span class="token string">'Checking if machine default exists'</span><span class="token punctuation">..</span>.
 Press any key to continue<span class="token punctuation">..</span>.
 </code></pre>
-<p>From the message it looked it something went wrong with the virtual machine, so I decide to invesgigate myself.</p>
-<p>I executed below command in a <code>cmd</code> to list down the virtual machines available.</p>
+<p>From the message it looked it something went wrong with the virtual machine, so I decidedto investigate myself.</p>
+<p>I executed below command in a <code>cmd</code> to list down the virtual machines available.  </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine <span class="token function">ls</span>
 
 NAME         ACTIVE   DRIVER       STATE     URL   SWARM   DOCKER    ERRORS
 my-default   -        virtualbox   Stopped                 Unknown
 </code></pre>
-<p>For some reason, the default VM had not started. I started it manually by executing</p>
+<p>For some reason, the default VM had not started. I started it manually by executing  </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine start my-default
 Starting <span class="token string">"my-default"</span><span class="token punctuation">..</span>.
 <span class="token punctuation">(</span>my-default<span class="token punctuation">)</span> Check network to re-create <span class="token keyword">if</span> needed<span class="token punctuation">..</span>.
@@ -362,7 +594,7 @@ Detecting the provisioner<span class="token punctuation">..</span>.
 Started machines may have new IP addresses. You may need to re-run the <span class="token variable"><span class="token variable">`</span>docker-machine <span class="token function">env</span><span class="token variable">`</span></span> command.
 </code></pre>
 <p><code>Waiting for an IP...</code> took a while</p>
-<p>Running <code>docker ps</code> or any docker command gave below error</p>
+<p>Running <code>docker ps</code> or any docker command gave below error  </p>
 <pre class=" language-bash"><code class="language-bash">An error occurred trying to connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v
 1.23/containers/json: <span class="token function">open</span> //./pipe/docker_engine: The system cannot <span class="token function">find</span> the <span class="token keyword">fi</span>
 le specified.
@@ -378,7 +610,7 @@ SET DOCKER_MACHINE_NAME<span class="token operator">=</span>my-default
 REM Run this <span class="token function">command</span> to configure your shell:
 REM     @FOR /f <span class="token string">"tokens=*"</span> %i IN <span class="token punctuation">(</span><span class="token string">'docker-machine env my-default'</span><span class="token punctuation">)</span> DO @%i
 </code></pre>
-<p>Then execute the command suggested in the output.</p>
+<p>Then executed the command suggested in the output.</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> @FOR /f <span class="token string">"tokens=*"</span> %i IN <span class="token punctuation">(</span><span class="token string">'docker-machine env my-default'</span><span class="token punctuation">)</span> DO @%i
 </code></pre>
 <p>Now run <code>docker ps</code> or any docker command. It should work now.</p>
@@ -396,138 +628,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 </div>
 
-    <a data-url="http://computerholic.logicize.co/how-to-make-docker-work-in-windows/" data-id="cj23iu9y00001mb2pt2lwyh0l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-how-configure-putty-for-passwordless-ssh" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/how-configure-putty-for-passwordless-ssh/">How configure Putty for passwordless SSH</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/how-configure-putty-for-passwordless-ssh/">
-            <time datetime="2016-08-05T23:34:54.000Z" itemprop="datePublished">2016-08-06</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Maintaining multiple servers at work has been a real pain in the ass for me these days. Although I have listed all those servers in putty, I have to remember username-password pairs for each server, or atleast copy it from my secret secure notes when I have to login.</p>
-<p>Then I came up with a grand plan for using RSA keys for these logins instead. This made the login process a click of a button in putty.</p>
-<h3 id="Generate-a-key-pair-with-Putty-Key-Generator"><a href="#Generate-a-key-pair-with-Putty-Key-Generator" class="headerlink" title="Generate a key pair with Putty Key Generator"></a>Generate a key pair with Putty Key Generator</h3><ul>
-<li>Open up <code>puttygen</code> to generate a keypair</li>
-<li>Generate a <strong>SSH-2 RSA</strong> keypair</li>
-<li>Save public key as <code>.pub</code> and private key as <code>.ppk</code></li>
-</ul>
-<h3 id="Add-public-key-as-an-authorized-key-in-the-server"><a href="#Add-public-key-as-an-authorized-key-in-the-server" class="headerlink" title="Add public key as an authorized key in the server"></a>Add public key as an authorized key in the server</h3><ul>
-<li>Login onto your server using putty</li>
-<li>Navigate to <code>.ssh</code> folder of current user         <pre><code>cd ~/.ssh
-</code></pre></li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://computerholic.logicize.co/how-configure-putty-for-passwordless-ssh/" data-id="cj23iu9xt0000mb2ps0p3jw5b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://computerholic.logicize.co/how-to-make-docker-work-in-windows/" data-id="cj24nfo0i0001pr2pj2mv2uea" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -607,8 +708,22 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
                 <aside id="sidebar">
    
         
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hackerrank/">hackerrank</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hackerrank/solution/">solution</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
     
         
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-toolbox/">docker toolbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fix/">fix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hackerrank/">hackerrank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solution/">solution</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
     
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
