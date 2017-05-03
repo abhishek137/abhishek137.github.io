@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://computerholic.logicize.co/hackerrank/solution/crush/</loc>
+        <lastmod>2017-05-03T18:33:11.764Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://computerholic.logicize.co/topic/javascript-closures/</loc>
         <lastmod>2017-05-03T18:31:36.212Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +25,6 @@
     <url>
         <loc>http://computerholic.logicize.co/how-to-make-docker-work-in-windows/</loc>
         <lastmod>2017-04-30T12:35:45.194Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://computerholic.logicize.co/hackerrank/solution/crush/</loc>
-        <lastmod>2017-04-30T12:28:49.066Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
