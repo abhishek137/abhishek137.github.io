@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     
-    <title>How to make docker work in Windows | Computerholic</title>
+    <title>Flexible Express Middlewares | Computerholic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="I tried the new Docket Toolbox for windows. However, the Docker Start Terminal never seemed to work for me. I keep on getting below error, nothing seems to resolve it. Looks like something went wrong">
-<meta name="keywords" content="docker,docker toolbox,windows,fix">
+    <meta name="description" content="Traditional express middlewares execute depending on the request url, but they can be extended to execute depending on the other values of request object. Let’s assume there is a requirement of collap">
+<meta name="keywords" content="nodejs,express,middleware,tweak">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to make docker work in Windows">
-<meta property="og:url" content="http://computerholic.logicize.co/how-to-make-docker-work-in-windows/index.html">
+<meta property="og:title" content="Flexible Express Middlewares">
+<meta property="og:url" content="http://computerholic.logicize.co/topic/flexible-express-middlewares/index.html">
 <meta property="og:site_name" content="Computerholic">
-<meta property="og:description" content="I tried the new Docket Toolbox for windows. However, the Docker Start Terminal never seemed to work for me. I keep on getting below error, nothing seems to resolve it. Looks like something went wrong">
-<meta property="og:updated_time" content="2017-04-30T12:35:45.000Z">
+<meta property="og:description" content="Traditional express middlewares execute depending on the request url, but they can be extended to execute depending on the other values of request object. Let’s assume there is a requirement of collap">
+<meta property="og:updated_time" content="2017-06-23T16:45:14.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to make docker work in Windows">
-<meta name="twitter:description" content="I tried the new Docket Toolbox for windows. However, the Docker Start Terminal never seemed to work for me. I keep on getting below error, nothing seems to resolve it. Looks like something went wrong">
+<meta name="twitter:title" content="Flexible Express Middlewares">
+<meta name="twitter:description" content="Traditional express middlewares execute depending on the request url, but they can be extended to execute depending on the other values of request object. Let’s assume there is a requirement of collap">
     
 
     
@@ -119,7 +119,7 @@
 
         <div class="outer">
             
-            <section id="main"><article id="post-how-to-make-docker-work-in-windows" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-topic/flexible-express-middlewares" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -128,7 +128,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            How to make docker work in Windows
+            Flexible Express Middlewares
         </h1>
     
 
@@ -137,17 +137,22 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/how-to-make-docker-work-in-windows/">
-            <time datetime="2016-08-06T01:57:39.000Z" itemprop="datePublished">2016-08-06</time>
+        <a href="/topic/flexible-express-middlewares/">
+            <time datetime="2017-06-23T10:44:38.000Z" itemprop="datePublished">2017-06-23</time>
         </a>
     </div>
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/topic/">topic</a>
+    </div>
+
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/docker/">docker</a>, <a class="tag-link" href="/tags/docker-toolbox/">docker toolbox</a>, <a class="tag-link" href="/tags/fix/">fix</a>, <a class="tag-link" href="/tags/windows/">windows</a>
+        <a class="tag-link" href="/tags/express/">express</a>, <a class="tag-link" href="/tags/middleware/">middleware</a>, <a class="tag-link" href="/tags/nodejs/">nodejs</a>, <a class="tag-link" href="/tags/tweak/">tweak</a>
     </div>
 
                     </div>
@@ -157,52 +162,32 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>I tried the new <a href="https://www.docker.com/products/docker-toolbox" target="_blank" rel="external">Docket Toolbox</a> for windows. However, the <code>Docker Start Terminal</code> never seemed to work for me. I keep on getting below error, nothing seems to resolve it.</p>
-<pre class=" language-bash"><code class="language-bash">Looks like something went wrong <span class="token keyword">in</span> step <span class="token string">'Checking if machine default exists'</span><span class="token punctuation">..</span>.
-Press any key to continue<span class="token punctuation">..</span>.
-</code></pre>
-<p>From the message it looked it something went wrong with the virtual machine, so I decidedto investigate myself.</p>
-<p>I executed below command in a <code>cmd</code> to list down the virtual machines available.  </p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine <span class="token function">ls</span>
+            <p>Traditional express middlewares execute depending on the request url, but they can be extended to execute depending on the other values of request object.</p>
+<p>Let’s assume there is a requirement of collapsing all the rest apis to a single endpoint due to security reasons. So, all requests will hit a single endpoint <code>http://server.com/api</code> on the server. Request body will have an <code>action</code> field to invoke required server functionalities.</p>
+<p>This requirement can be implemented by adding another layer on top of express middleware.</p>
+<a id="more"></a>
+<pre class=" language-javascript"><code class="language-javascript">
+app<span class="token punctuation">.</span>onAction <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> call<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-NAME         ACTIVE   DRIVER       STATE     URL   SWARM   DOCKER    ERRORS
-my-default   -        virtualbox   Stopped                 Unknown
-</code></pre>
-<p>For some reason, the default VM had not started. I started it manually by executing  </p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine start my-default
-Starting <span class="token string">"my-default"</span><span class="token punctuation">..</span>.
-<span class="token punctuation">(</span>my-default<span class="token punctuation">)</span> Check network to re-create <span class="token keyword">if</span> needed<span class="token punctuation">..</span>.
-<span class="token punctuation">(</span>my-default<span class="token punctuation">)</span> Waiting <span class="token keyword">for</span> an IP<span class="token punctuation">..</span>.
-Machine <span class="token string">"my-default"</span> was started.
-Waiting <span class="token keyword">for</span> SSH to be available<span class="token punctuation">..</span>.
-Detecting the provisioner<span class="token punctuation">..</span>.
-Started machines may have new IP addresses. You may need to re-run the <span class="token variable"><span class="token variable">`</span>docker-machine <span class="token function">env</span><span class="token variable">`</span></span> command.
-</code></pre>
-<p><code>Waiting for an IP...</code> took a while</p>
-<p>Running <code>docker ps</code> or any docker command gave below error  </p>
-<pre class=" language-bash"><code class="language-bash">An error occurred trying to connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v
-1.23/containers/json: <span class="token function">open</span> //./pipe/docker_engine: The system cannot <span class="token function">find</span> the <span class="token keyword">fi</span>
-le specified.
-</code></pre>
-<p>To fix this, I had to set appropriate environment variables by executing</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker-machine <span class="token function">env</span> my-default
+    <span class="token comment" spellcheck="true">// add a generic middleware to intercept the request</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-SET DOCKER_TLS_VERIFY<span class="token operator">=</span>1
-SET DOCKER_HOST<span class="token operator">=</span>tcp://192.168.99.100:2376
-SET DOCKER_CERT_PATH<span class="token operator">=</span>C:\Users\abhishek_majhi\.docker\machine\machines\my-default
+        <span class="token comment" spellcheck="true">// check if action is matching</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>body <span class="token operator">&amp;&amp;</span> request<span class="token punctuation">.</span>body<span class="token punctuation">.</span>action <span class="token operator">==</span> action<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">call</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>response<span class="token punctuation">,</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> 
 
-SET DOCKER_MACHINE_NAME<span class="token operator">=</span>my-default
-REM Run this <span class="token function">command</span> to configure your shell:
-REM     @FOR /f <span class="token string">"tokens=*"</span> %i IN <span class="token punctuation">(</span><span class="token string">'docker-machine env my-default'</span><span class="token punctuation">)</span> DO @%i
+        <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>Then executed the command suggested in the output.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> @FOR /f <span class="token string">"tokens=*"</span> %i IN <span class="token punctuation">(</span><span class="token string">'docker-machine env my-default'</span><span class="token punctuation">)</span> DO @%i
+<p><code>onAction</code> method can be called multiple time just like the middlewares to provide required server functionalities.</p>
+<pre class=" language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function">onAction</span><span class="token punctuation">(</span><span class="token string">'REGISTRATION'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//server functionality</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>Now run <code>docker ps</code> or any docker command. It should work now.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> docker <span class="token function">ps</span>
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-</code></pre>
-<p>That’s All Folks!</p>
 
         
         </div>
@@ -213,7 +198,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 </div>
 
-    <a data-url="http://computerholic.logicize.co/how-to-make-docker-work-in-windows/" data-id="cj4a367f00002nu2pxz6dgv6d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://computerholic.logicize.co/topic/flexible-express-middlewares/" data-id="cj4a39o5q001hnu2pj1o09jrt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -288,15 +273,11 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
         
 <nav id="article-nav">
     
-        <a href="/hackerrank/solution/array-splitting/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    Solution to HackerRank Problem - Nikita and the Game
-                
-            </div>
-        </a>
     
+        <a href="/topic/javascript-closures/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Javascript Closures</div>
+        </a>
     
 </nav>
 
