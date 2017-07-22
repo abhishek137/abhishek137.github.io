@@ -30,85 +30,85 @@
     </url>
 
     <url>
-        <loc>http://computerholic.logicize.co/tags/hackerrank/</loc>
-        <lastmod>2017-05-03T18:41:05.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://computerholic.logicize.co/tags/solution/</loc>
-        <lastmod>2017-05-03T18:41:05.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://computerholic.logicize.co/tags/java/</loc>
-        <lastmod>2017-05-03T18:41:05.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://computerholic.logicize.co/tags/javascript/</loc>
-        <lastmod>2017-06-23T16:08:15.690Z</lastmod>
+        <lastmod>2017-06-23T16:08:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://computerholic.logicize.co/tags/interview/</loc>
-        <lastmod>2017-06-23T16:08:15.690Z</lastmod>
+        <lastmod>2017-06-23T16:08:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://computerholic.logicize.co/tags/nodejs/</loc>
-        <lastmod>2017-06-23T16:45:14.633Z</lastmod>
+        <lastmod>2017-06-23T16:45:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://computerholic.logicize.co/tags/express/</loc>
-        <lastmod>2017-06-23T16:45:14.633Z</lastmod>
+        <lastmod>2017-06-23T16:45:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://computerholic.logicize.co/tags/middleware/</loc>
-        <lastmod>2017-06-23T16:45:14.633Z</lastmod>
+        <lastmod>2017-06-23T16:45:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://computerholic.logicize.co/tags/tweak/</loc>
-        <lastmod>2017-06-23T16:45:14.633Z</lastmod>
+        <lastmod>2017-06-23T16:45:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://computerholic.logicize.co/tags/vultr/</loc>
-        <lastmod>2017-06-26T06:15:17.757Z</lastmod>
+        <lastmod>2017-06-26T06:15:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://computerholic.logicize.co/tags/dns/</loc>
-        <lastmod>2017-06-26T06:15:17.757Z</lastmod>
+        <lastmod>2017-06-26T06:15:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://computerholic.logicize.co/tags/cloud/</loc>
-        <lastmod>2017-06-26T06:15:17.757Z</lastmod>
+        <lastmod>2017-06-26T06:15:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://computerholic.logicize.co/tags/hackerrank/</loc>
+        <lastmod>2017-07-22T07:32:32.875Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://computerholic.logicize.co/tags/solution/</loc>
+        <lastmod>2017-07-22T07:32:32.875Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://computerholic.logicize.co/tags/java/</loc>
+        <lastmod>2017-07-22T07:32:32.875Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

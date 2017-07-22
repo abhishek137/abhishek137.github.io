@@ -7,8 +7,32 @@
     </url>
 
     <url>
+        <loc>http://computerholic.logicize.co/hackerrank/solution/grading/</loc>
+        <lastmod>2017-07-22T07:32:32.875Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://computerholic.logicize.co/hackerrank/solution/minimum-absolute-difference-in-an-array/</loc>
+        <lastmod>2017-07-22T07:31:05.095Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://computerholic.logicize.co/hackerrank/solution/staircase/</loc>
+        <lastmod>2017-07-22T07:29:34.391Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://computerholic.logicize.co/how-to-point-your-sub-domain-to-a-vultr-instance/</loc>
-        <lastmod>2017-06-26T06:15:17.757Z</lastmod>
+        <lastmod>2017-06-26T06:15:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +40,7 @@
 
     <url>
         <loc>http://computerholic.logicize.co/topic/flexible-express-middlewares/</loc>
-        <lastmod>2017-06-23T16:45:14.633Z</lastmod>
+        <lastmod>2017-06-23T16:45:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +48,7 @@
 
     <url>
         <loc>http://computerholic.logicize.co/topic/javascript-closures/</loc>
-        <lastmod>2017-06-23T16:08:15.690Z</lastmod>
+        <lastmod>2017-06-23T16:08:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
