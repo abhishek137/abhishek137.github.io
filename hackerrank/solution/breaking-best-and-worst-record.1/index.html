@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Solution to HackerRank Problem - Grading Students | Computerholic</title>
+    <title>Solution to HackerRank Problem - Breaking the Records | Computerholic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="/* Solution to HackerRank Problem: Grading Students  * https://www.hackerrank.com/challenges/grading  */  import java.io.*; import java.util.*; import java.text.*; import java.math.*; import java.util">
+    <meta name="description" content="/* Solution to HackerRank Problem: Breaking the Records  * https://www.hackerrank.com/challenges/breaking-best-and-worst-records  */  import java.io.*; import java.util.*; import java.text.*; import j">
 <meta name="keywords" content="hackerrank,solution,java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Solution to HackerRank Problem - Grading Students">
-<meta property="og:url" content="http://computerholic.logicize.co/hackerrank/solution/grading/index.html">
+<meta property="og:title" content="Solution to HackerRank Problem - Breaking the Records">
+<meta property="og:url" content="http://computerholic.logicize.co/hackerrank/solution/breaking-best-and-worst-record.1/index.html">
 <meta property="og:site_name" content="Computerholic">
-<meta property="og:description" content="/* Solution to HackerRank Problem: Grading Students  * https://www.hackerrank.com/challenges/grading  */  import java.io.*; import java.util.*; import java.text.*; import java.math.*; import java.util">
-<meta property="og:updated_time" content="2017-07-22T07:32:32.875Z">
+<meta property="og:description" content="/* Solution to HackerRank Problem: Breaking the Records  * https://www.hackerrank.com/challenges/breaking-best-and-worst-records  */  import java.io.*; import java.util.*; import java.text.*; import j">
+<meta property="og:updated_time" content="2017-07-29T09:42:51.644Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Solution to HackerRank Problem - Grading Students">
-<meta name="twitter:description" content="/* Solution to HackerRank Problem: Grading Students  * https://www.hackerrank.com/challenges/grading  */  import java.io.*; import java.util.*; import java.text.*; import java.math.*; import java.util">
+<meta name="twitter:title" content="Solution to HackerRank Problem - Breaking the Records">
+<meta name="twitter:description" content="/* Solution to HackerRank Problem: Breaking the Records  * https://www.hackerrank.com/challenges/breaking-best-and-worst-records  */  import java.io.*; import java.util.*; import java.text.*; import j">
     
 
     
@@ -130,7 +130,7 @@ ga('send', 'pageview');
 
         <div class="outer">
             
-            <section id="main"><article id="post-hackerrank/solution/grading" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-hackerrank/solution/breaking-best-and-worst-record.1" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -139,7 +139,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            Solution to HackerRank Problem - Grading Students
+            Solution to HackerRank Problem - Breaking the Records
         </h1>
     
 
@@ -148,8 +148,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/hackerrank/solution/grading/">
-            <time datetime="2017-07-22T01:52:17.000Z" itemprop="datePublished">2017-07-22</time>
+        <a href="/hackerrank/solution/breaking-best-and-worst-record.1/">
+            <time datetime="2017-07-29T01:52:17.000Z" itemprop="datePublished">2017-07-29</time>
         </a>
     </div>
 
@@ -173,8 +173,8 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/* Solution to HackerRank Problem: Grading Students
- * https://www.hackerrank.com/challenges/grading
+            <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/* Solution to HackerRank Problem: Breaking the Records
+ * https://www.hackerrank.com/challenges/breaking-best-and-worst-records
  */</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
@@ -185,51 +185,42 @@ ga('send', 'pageview');
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 
-    <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> grades<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> grades<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            grades<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">grade</span><span class="token punctuation">(</span>grades<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getRecord</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// Complete this function</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-        <span class="token keyword">return</span> grades<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> max  <span class="token operator">=</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> min <span class="token operator">=</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">grade</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>m <span class="token operator">&lt;</span> <span class="token number">38</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> m<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">else</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> nm <span class="token operator">=</span> <span class="token function">nextMultiple</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>nm <span class="token operator">-</span> m<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                <span class="token keyword">return</span> nm<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">else</span><span class="token punctuation">{</span>
-                <span class="token keyword">return</span> m<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> s<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>max<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+                max <span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
 
+            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>min<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                result<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+                min <span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
 
-    <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">nextMultiple</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">int</span> m <span class="token operator">=</span> n<span class="token operator">/</span><span class="token number">5</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">return</span> <span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">5</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> n <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> grades <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> grades_i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> grades_i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> grades_i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            grades<span class="token punctuation">[</span>grades_i<span class="token punctuation">]</span> <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> s_i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> s_i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> s_i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            s<span class="token punctuation">[</span>s_i<span class="token punctuation">]</span> <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> result <span class="token operator">=</span> <span class="token function">solve</span><span class="token punctuation">(</span>grades<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> result<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> result<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">"\n"</span> <span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> result <span class="token operator">=</span> <span class="token function">getRecord</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String separator <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">,</span> delimiter <span class="token operator">=</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Integer val <span class="token operator">:</span> result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>separator <span class="token operator">+</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            separator <span class="token operator">=</span> delimiter<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -243,7 +234,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://computerholic.logicize.co/hackerrank/solution/grading/" data-id="cj5ez97lc0011932p79j3gpmr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://computerholic.logicize.co/hackerrank/solution/breaking-best-and-worst-record.1/" data-id="cj5s9wgf80001bo2pq2y2g6u5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -318,19 +309,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/hackerrank/solution/minimum-absolute-difference-in-an-array/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/hackerrank/solution/the-birthday-bar/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    Solution to HackerRank Problem - Minimum Absolute Difference in an Array
+                    Solution to HackerRank Problem - Birthday Chocolate
                 
             </div>
         </a>
     
     
-        <a href="/hackerrank/solution/staircase/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/hackerrank/solution/minimum-absolute-difference-in-an-array/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Solution to HackerRank Problem - Staircase</div>
+            <div class="article-nav-title">Solution to HackerRank Problem - Minimum Absolute Difference in an Array</div>
         </a>
     
 </nav>
